@@ -7,9 +7,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ='Australia/Sydney'
-      - SETTINGS_ENCRYPTION_KEY=
-      - CLI_ARGS= #optional
-      - DUPLICATI__WEBSERVICE_PASSWORD= #optional
     volumes:
       - backup_config:/config
       - /mnt/storage/backups:/backups
