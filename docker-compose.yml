@@ -1,1 +1,18 @@
+services:
+  backup:
+    image: linuxserver:duplicati
+    container_name: backup
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ='Australia/Sydney'
+    volumes:
+      - backup_config:/config
+      - /mnt/storage/backups:/backups
+    ports:
+      - 83:8200
+    restart: unless-stopped
 
+volumes:
+  backup_config:
+  
