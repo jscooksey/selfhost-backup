@@ -1,11 +1,15 @@
+---
 services:
   backup:
-    image: linuxserver:duplicati
+    image: lscr.io/linuxserver/duplicati:latest
     container_name: backup
     environment:
-      - PUID=0
-      - PGID=0
+      - PUID=1000
+      - PGID=1000
       - TZ='Australia/Sydney'
+      - SETTINGS_ENCRYPTION_KEY=
+      - CLI_ARGS= #optional
+      - DUPLICATI__WEBSERVICE_PASSWORD= #optional
     volumes:
       - backup_config:/config
       - /mnt/storage/backups:/backups
@@ -15,4 +19,3 @@ services:
 
 volumes:
   backup_config:
-  
