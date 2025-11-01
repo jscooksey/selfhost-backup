@@ -7,9 +7,11 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ='Australia/Sydney'
+      - SETTINGS_ENCRYPTION_KEY=123456abcdef
     volumes:
       - backup_config:/config
       - /mnt/storage/backups:/backups
+      - /mnt/source:/source
     ports:
       - 83:8200
     restart: unless-stopped
