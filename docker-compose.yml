@@ -11,12 +11,12 @@ services:
     volumes:
       - backup_config:/config
       - /mnt/storage/backups:/backups
-      - mealie_mealie-data:/source/mealie:ro
+      - mealie-data:/source/mealie:ro
     ports:
       - 83:8200
     restart: unless-stopped
 
 volumes:
   backup_config:
-  mealie_mealie-data:
+  mealie-data:
     external: true
