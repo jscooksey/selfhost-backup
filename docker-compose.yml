@@ -11,8 +11,7 @@ services:
     volumes:
       - backup_config:/config
       - /mnt/storage/backups:/backups
-      - /mnt/source:/source
-      - /var/lib/docker/volumes:/volumes
+      - mealie-data:/source/mealie:ro
     ports:
       - 83:8200
     restart: unless-stopped
