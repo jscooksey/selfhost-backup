@@ -18,3 +18,5 @@ services:
 
 volumes:
   backup_config:
+  mealie_mealie-data:
+    external: true
