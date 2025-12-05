@@ -11,7 +11,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - backup_config:/config
-      - /mnt/storage/backups:/backups
+      # - /mnt/storage/backups:/backups
       - mealie_mealie-data:/source/mealie:ro
     ports:
       - 83:8200
