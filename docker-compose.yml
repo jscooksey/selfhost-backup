@@ -11,6 +11,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - backup_config:/config
+      - backup-staging:/backups:ro
       # - /mnt/storage/backups:/backups
       - mealie_mealie-data:/source/mealie:ro
     ports:
@@ -19,5 +20,7 @@ services:
 
 volumes:
   backup_config:
+  backup-staging:
+    external: true
   mealie_mealie-data:
     external: true
