@@ -11,8 +11,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - backup_config:/config
-      - backup-staging:/backups:ro
-      # - /mnt/storage/backups:/backups
+      - /home/justin/backups:/backups:ro
       - mealie_mealie-data:/source/mealie:ro
     ports:
       - 83:8200
