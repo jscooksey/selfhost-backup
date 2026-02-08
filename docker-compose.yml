@@ -1,4 +1,9 @@
 ---
+#
+# Duplicati Backup Service
+#   version 2026-02-08
+#
+
 services:
   backup:
     image: lscr.io/linuxserver/duplicati:latest
@@ -7,12 +12,11 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Australia/Sydney
-      - SETTINGS_ENCRYPTION_KEY=123456abcdef
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - backup_config:/config
       - /home/justin/backups:/backups:ro
-      - mealie_mealie-data:/source/mealie:ro
+      - mealie_mealie-data:/source/mealie:ro  # Need to sort this one out perhaps
     ports:
       - 83:8200
     restart: unless-stopped
